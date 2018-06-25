@@ -4,43 +4,51 @@ import json
 from flask import Flask, jsonify, redirect, request, send_from_directory
 
 app = Flask(__name__)
-directory_path = path.dirname(path.realpath(__file__))
-icon_sets_path = directory_path + '/icon-sets/icon-sets.json'
-views_path = directory_path + '/views.json'
+path_dir = path.dirname(path.realpath(__file__))
+path_icon_set_json = path_dir + '/icon-sets/icon-sets.json'
+path_view_json = path_dir + '/views.json'
+path_static = path_dir + '/public'
 
 
-# Create cache for total number of unique views per icon set
-views_counts = {}
-if path.exists(views_path):
-    with open(views_path, 'r') as views_file:
-        views = json.load(views_file)
-        for icon_set_id, ip_addresses in views.items():
-            views_counts[icon_set_id] = len(ip_addresses)
+# Load list of icon sets to memory
+with open(path_icon_set_json, 'r') as icon_sets_file:
+    icon_sets = json.load(icon_sets_file)
+
+# Load view IP addresses to memory (view_addresses) and create cache for total number of unique
+# views per icon set (view_counts)
+view_addresses = {}
+view_counts = {}
+if path.exists(path_view_json):
+    with open(path_view_json, 'r') as view_file:
+        view_addresses = json.load(view_file)
+        for icon_set_id, ip_addresses in view_addresses.items():
+            view_counts[icon_set_id] = len(ip_addresses)
 
 
 # Serve static files if in development mode (handled by nginx in production)
 if 'FLASK_ENV' in environ and environ['FLASK_ENV'] == 'development':
     @app.route('/', methods=['GET'])
     def get_html():
-        return send_from_directory(directory_path + '/public', 'index.html')
+        return send_from_directory(path_static, 'index.html')
 
     @app.route('/bundle.js', methods=['GET'])
     def get_js():
-        return send_from_directory(directory_path + '/public', 'bundle.js')
+        return send_from_directory(path_static, 'bundle.js')
 
 
 @app.route('/iconsets', methods=['GET'])
 def get_icon_sets():
     """Get list of icon sets with basic information and number of views"""
 
-    # Match icon sets from icon-sets.json with their number of unique views
-    with open(icon_sets_path, 'r') as icon_sets_file:
-        icon_sets = json.load(icon_sets_file)
-        for icon_set in icon_sets:
-            icon_set['views'] = views_counts[icon_set['id']]
+    # Match icon sets with their number of unique views
+    response = icon_sets
+    for icon_set in response:
+        if icon_set['id'] in view_counts:
+            icon_set['views'] = view_counts[icon_set['id']]
+        else:
+            icon_set['views'] = 0
 
-    # Send resulting JSON object to client
-    return jsonify(icon_sets)
+    return jsonify(response)
 
 
 @app.route('/views', methods=['PATCH'])
@@ -50,24 +58,20 @@ def register_view():
     icon_set_id = request.form['icon_set_id']
     ip_address = request.remote_addr
 
-    with open(views_path, 'w+') as views_file:
-        # Parse views.json or create new dictionary
-        try:
-            views = json.load(views_file)
-        except ValueError:
-            views = {}
+    # Add IP address to corresponding icon set
+    if icon_set_id not in view_addresses:
+        view_addresses[icon_set_id] = [ip_address]
+        view_counts[icon_set_id] = 1
+    elif ip_address not in view_addresses[icon_set_id]:
+        view_addresses[icon_set_id].append(ip_address)
+        view_counts[icon_set_id] += 1
+    else:
+        return ''
 
-        # Add IP address to corresponding icon set
-        if icon_set_id not in views:
-            views[icon_set_id] = [ip_address]
-        elif ip_address not in views[icon_set_id]:
-            views[icon_set_id].append(ip_address)
-            views_counts[icon_set_id] += 1
-
+    with open(path_view_json, 'w+') as view_file:
         # Write updated object to file
-        views_file.seek(0)
-        json.dump(views, views_file)
-        views_file.truncate()
+        json.dump(view_addresses, view_file)
+
     return ''
 
 
