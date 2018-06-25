@@ -1,0 +1,39 @@
+{
+	"name": "iconsets.org",
+	"version": "0.1.0",
+	"description": "Icon set discovery website for designers",
+	"private": true,
+	"main": "src/index.js",
+	"author": "Samuel Meuli <dev@samuelmeuli.com>",
+	"repository": "github:samuelmeuli/iconsets.org",
+	"homepage": "https://iconsets.org",
+	"license": "MIT",
+	"scripts": {
+		"start": "webpack --mode development --watch",
+		"build": "webpack --mode production",
+		"lint": "eslint .",
+		"precommit": "yarn lint",
+		"prepush": "yarn lint"
+	},
+	"dependencies": {
+		"prop-types": "^15.6.2",
+		"react": "^16.4.1",
+		"react-dom": "^16.4.1"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.3",
+		"babel-loader": "^7.1.4",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-react": "^6.24.1",
+		"eslint": "^4.19.1",
+		"eslint-config-airbnb": "^17.0.0",
+		"eslint-plugin-import": "^2.13.0",
+		"eslint-plugin-jsx-a11y": "^6.0.3",
+		"eslint-plugin-react": "^7.10.0",
+		"html-loader": "^0.5.5",
+		"html-webpack-plugin": "^3.2.0",
+		"husky": "^0.14.3",
+		"webpack": "^4.12.1",
+		"webpack-cli": "^3.0.8"
+	}
+}

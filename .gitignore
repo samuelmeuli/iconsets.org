@@ -1,8 +1,8 @@
 # OS
 .DS_Store
 
-# Node
-node_modules/
+# Logs
+*.log
 
 # Python
 __pycache__/
@@ -10,7 +10,11 @@ __pycache__/
 *.pyo
 *$py.class
 
-# Sass
-sass-cache/
-*.css
-*.css.map
+# IP address cache
+views.json
+
+# Node
+node_modules/
+
+# Webpack output
+public/
