@@ -1,7 +1,7 @@
-from os import path
+from os import environ, path
 
 import json
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 
 app = Flask(__name__)
 directory_path = path.dirname(path.realpath(__file__))
@@ -16,6 +16,17 @@ if path.exists(views_path):
         views = json.load(views_file)
         for icon_set_id, ip_addresses in views.items():
             views_counts[icon_set_id] = len(ip_addresses)
+
+
+# Serve static files if in development mode (handled by nginx in production)
+if 'FLASK_ENV' in environ and environ['FLASK_ENV'] == 'development':
+    @app.route('/', methods=['GET'])
+    def get_html():
+        return send_from_directory(directory_path + '/public', 'index.html')
+
+    @app.route('/bundle.js', methods=['GET'])
+    def get_js():
+        return send_from_directory(directory_path + '/public', 'bundle.js')
 
 
 @app.route('/iconsets', methods=['GET'])
