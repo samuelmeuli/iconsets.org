@@ -1,7 +1,7 @@
 from os import environ, path
 
 import json
-from flask import Flask, jsonify, request, send_from_directory
+from flask import Flask, jsonify, redirect, request, send_from_directory
 
 app = Flask(__name__)
 directory_path = path.dirname(path.realpath(__file__))
@@ -69,3 +69,10 @@ def register_view():
         json.dump(views, views_file)
         views_file.truncate()
     return ''
+
+
+@app.route('/<path:path>')
+def catch_all(path):
+    """Catch-all route: Redirect to root path"""
+
+    return redirect('/', code=302)
