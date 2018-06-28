@@ -17,4 +17,4 @@ views.json
 node_modules/
 
 # Webpack output
-public/
+bundle.js
