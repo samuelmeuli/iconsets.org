@@ -16,11 +16,13 @@
 		"prepush": "yarn lint"
 	},
 	"dependencies": {
+		"minireset.css": "^0.0.3",
 		"prop-types": "^15.6.2",
 		"react": "^16.4.1",
 		"react-dom": "^16.4.1"
 	},
 	"devDependencies": {
+		"autoprefixer": "^8.6.4",
 		"babel-core": "^6.26.3",
 		"babel-loader": "^7.1.4",
 		"babel-preset-env": "^1.7.0",
@@ -32,9 +34,11 @@
 		"eslint-plugin-jsx-a11y": "^6.0.3",
 		"eslint-plugin-react": "^7.10.0",
 		"husky": "^0.14.3",
-		"node-sass": "^4.9.0",
+		"node-sass": "^4.9.1",
+		"postcss-loader": "^2.1.5",
 		"sass-loader": "^7.0.3",
 		"style-loader": "^0.21.0",
+		"url-loader": "^1.0.1",
 		"webpack": "^4.12.1",
 		"webpack-cli": "^3.0.8"
 	}
