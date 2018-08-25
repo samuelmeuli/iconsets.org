@@ -1,6 +1,7 @@
+import json
 from os import environ, path
 
-import json
+from anonymizeip import anonymize_ip
 from flask import Flask, jsonify, redirect, request, send_from_directory
 
 app = Flask(__name__)
@@ -57,13 +58,14 @@ def register_view():
 
     icon_set_id = request.form['icon_set_id']
     ip_address = request.remote_addr
+    ip_address_anonymized = anonymize_ip(ip_address)
 
     # Add IP address to corresponding icon set
     if icon_set_id not in view_addresses:
-        view_addresses[icon_set_id] = [ip_address]
+        view_addresses[icon_set_id] = [ip_address_anonymized]
         view_counts[icon_set_id] = 1
-    elif ip_address not in view_addresses[icon_set_id]:
-        view_addresses[icon_set_id].append(ip_address)
+    elif ip_address_anonymized not in view_addresses[icon_set_id]:
+        view_addresses[icon_set_id].append(ip_address_anonymized)
         view_counts[icon_set_id] += 1
     else:
         return ''
