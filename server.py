@@ -15,8 +15,8 @@ path_static = path_dir + '/public'
 with open(path_icon_set_json, 'r') as icon_sets_file:
     icon_sets = json.load(icon_sets_file)
 
-# Load view IP addresses to memory (view_addresses) and create cache for total number of unique
-# views per icon set (view_counts)
+# Load view IP addresses to memory (view_addresses) and create cache for total
+# number of unique views per icon set (view_counts)
 view_addresses = {}
 view_counts = {}
 if path.exists(path_view_json):
@@ -54,7 +54,8 @@ def get_icon_sets():
 
 @app.route('/views', methods=['PATCH'])
 def register_view():
-    """Add IP address of client to icon set entry in views.json unless it already exists"""
+    """Add IP address of client to icon set entry in views.json unless it
+    already exists"""
 
     icon_set_id = request.form['icon_set_id']
     ip_address = request.remote_addr
