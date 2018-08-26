@@ -1,0 +1,22 @@
+.list-entry {
+	display: flex;
+	margin-bottom: $spacing-large;
+	padding: $spacing-large;
+	background: $color-grey-light;
+	border-radius: $border-radius;
+	box-shadow: $box-shadow;
+	transition: $transition;
+
+	&:hover {
+		box-shadow: $box-shadow-hover;
+		transition: $transition;
+	}
+}
+
+.info-container {
+	width: 100%;
+}
+
+.field-container {
+	display: flex;
+}

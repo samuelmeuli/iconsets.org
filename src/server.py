@@ -6,9 +6,9 @@ from flask import Flask, jsonify, redirect, request, send_from_directory
 
 app = Flask(__name__)
 path_dir = path.dirname(path.realpath(__file__))
-path_icon_set_json = path_dir + '/icon-sets/icon-sets.json'
-path_view_json = path_dir + '/views.json'
-path_static = path_dir + '/public'
+path_icon_set_json = path_dir + '/../icon-sets.json'
+path_view_json = path_dir + '/../views.json'
+path_static = path_dir + '/../public'
 
 
 # Load list of icon sets to memory
