@@ -1,0 +1,101 @@
+[
+	{
+		"id": "entypo",
+		"name": "Entypo+",
+		"url": "http://www.entypo.com",
+		"dateAdded": "2018-06-25",
+		"hasFont": false,
+		"hasSvg": true,
+		"hasPng": false,
+		"license": "CC BY-SA 4.0",
+		"price": "free"
+	},
+	{
+		"id": "feather",
+		"name": "Feather",
+		"url": "https://feathericons.com",
+		"dateAdded": "2018-06-25",
+		"hasFont": false,
+		"hasSvg": true,
+		"hasPng": false,
+		"license": "MIT",
+		"price": "free"
+	},
+	{
+		"id": "font-awesome",
+		"name": "Font Awesome",
+		"url": "https://fontawesome.com",
+		"dateAdded": "2018-06-25",
+		"hasFont": true,
+		"hasSvg": true,
+		"hasPng": false,
+		"license": "multiple",
+		"price": "partly free"
+	},
+	{
+		"id": "maki",
+		"name": "Maki",
+		"url": "https://www.mapbox.com/maki-icons/",
+		"dateAdded": "2018-06-25",
+		"hasFont": false,
+		"hasSvg": true,
+		"hasPng": false,
+		"license": "CC0-1.0",
+		"price": "free"
+	},
+	{
+		"id": "minimal-icons",
+		"name": "Minimal Icons",
+		"url": "http://minimal-icons.com",
+		"dateAdded": "2018-06-25",
+		"hasFont": false,
+		"hasSvg": true,
+		"hasPng": true,
+		"license": "MIT",
+		"price": "free"
+	},
+	{
+		"id": "octicons",
+		"name": "Octicons",
+		"url": "https://octicons.github.com",
+		"dateAdded": "2018-06-25",
+		"hasFont": false,
+		"hasSvg": true,
+		"hasPng": false,
+		"license": "MIT",
+		"price": "free"
+	},
+	{
+		"id": "open-iconic",
+		"name": "Open Iconic",
+		"url": "https://useiconic.com/open",
+		"dateAdded": "2018-06-25",
+		"hasFont": true,
+		"hasSvg": true,
+		"hasPng": true,
+		"license": "multiple",
+		"price": "free"
+	},
+	{
+		"id": "typicons",
+		"name": "Typicons",
+		"url": "http://s-ings.com/typicons",
+		"dateAdded": "2018-06-25",
+		"hasFont": true,
+		"hasSvg": true,
+		"hasPng": true,
+		"license": "multiple",
+		"price": "free"
+	},
+	{
+		"id": "zondicons",
+		"name": "Zondicons",
+		"url": "https://www.zondicons.com",
+		"dateAdded": "2018-06-25",
+		"hasFont": false,
+		"hasSvg": true,
+		"hasPng": false,
+		"license": "CC BY 4.0",
+		"price": "free"
+	}
+]
