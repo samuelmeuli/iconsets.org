@@ -9,9 +9,10 @@ anonymizeip = "*"
 
 [dev-packages]
 "flake8" = "*"
+"flake8-quotes" = "*"
 
 [requires]
 python_version = "3.6"
 
 [scripts]
-lint = "pipenv run flake8 --exclude=.git,__pycache__,build,dist,node_modules"
+lint = "flake8 --exclude=.git,__pycache__,build,dist,node_modules --inline-quotes 'single'"
