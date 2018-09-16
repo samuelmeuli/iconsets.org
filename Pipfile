@@ -8,12 +8,11 @@ flask = "*"
 anonymizeip = "*"
 
 [dev-packages]
-"flake8" = "*"
-"flake8-quotes" = "*"
+pre-commit = "*"
 
 [requires]
 python_version = "3.6"
 
 [scripts]
 start = "FLASK_ENV=development python src/server.py"
-lint = "flake8 --exclude=.git,__pycache__,build,dist,node_modules --inline-quotes 'single'"
+format = "pipenv run pre-commit run --all-files"
