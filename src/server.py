@@ -83,3 +83,7 @@ def catch_all(path):
     """Catch-all route: Redirect to root path"""
 
     return redirect('/', code=302)
+
+
+if __name__ == '__main__':
+    app.run()
