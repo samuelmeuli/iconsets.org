@@ -30,8 +30,10 @@ footer, .field-label {
 	color: $color-grey;
 }
 
-footer a {
-	&:hover {
+footer {
+	line-height: 1;
+
+	a:hover {
 		text-decoration: underline;
 		text-underline-position: under;
 	}

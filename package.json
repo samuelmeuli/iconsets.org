@@ -4,7 +4,7 @@
 	"description": "Icon set discovery website for designers",
 	"private": true,
 	"main": "src/index.js",
-	"author": "Samuel Meuli <dev@samuelmeuli.com>",
+	"author": "Samuel Meuli <me@samuelmeuli.com>",
 	"repository": "github:samuelmeuli/iconsets.org",
 	"homepage": "https://iconsets.org",
 	"license": "MIT",
@@ -19,7 +19,8 @@
 		"minireset.css": "^0.0.3",
 		"prop-types": "^15.6.2",
 		"react": "^16.4.1",
-		"react-dom": "^16.4.1"
+		"react-dom": "^16.4.1",
+		"react-simple-svg": "^1.0.0"
 	},
 	"devDependencies": {
 		"autoprefixer": "^8.6.4",
@@ -38,6 +39,7 @@
 		"postcss-loader": "^2.1.5",
 		"sass-loader": "^7.0.3",
 		"style-loader": "^0.21.0",
+		"svg-inline-loader": "^0.8.0",
 		"url-loader": "^1.0.1",
 		"webpack": "^4.12.1",
 		"webpack-cli": "^3.0.8"

@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import SimpleSvg from 'react-simple-svg';
 
-import imgCheckMark from '../../assets/icons/check-mark.svg';
-import imgXMark from '../../assets/icons/x-mark.svg';
+import imgCheckMark from '../../assets/icons/check.svg';
+import imgXMark from '../../assets/icons/x.svg';
 
-
-const iconSize = 30;
 
 const propTypes = {
 	label: PropTypes.string.isRequired,
@@ -17,14 +16,17 @@ const propTypes = {
 };
 
 export default function Field({ label, value }) {
+	const iconSize = 30;
+
 	let valueOutput;
 	if (typeof value === 'boolean') {
 		valueOutput = (
-			<img
+			<SimpleSvg
 				src={value ? imgCheckMark : imgXMark}
-				alt={value ? 'Yes' : 'No'}
+				title={value ? 'Yes' : 'No'}
 				height={iconSize}
 				width={iconSize}
+				stroke={value ? '#51D765' : '#F44000'}
 			/>
 		);
 	} else {

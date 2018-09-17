@@ -1,9 +1,14 @@
-footer a {
+footer div {
 	display: flex;
 	justify-content: center;
-	align-items: center;
 
-	img {
-		margin-right: 8px;
+	a {
+		display: inline-flex;
+		align-items: center;
+		padding: 5px 0;
+
+		svg {
+			margin-right: 8px;
+		}
 	}
 }
