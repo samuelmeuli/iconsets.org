@@ -83,8 +83,8 @@ def register_view():
     return ""
 
 
-@app.route("/<path:path>")
-def catch_all(path):
+@app.route("/<path:invalid_path>")
+def catch_all(invalid_path):
     """Catch-all route: Redirect to root path"""
 
     return redirect("/", code=302)
