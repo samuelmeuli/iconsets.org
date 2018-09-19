@@ -91,4 +91,7 @@ def catch_all(invalid_path):
 
 
 if __name__ == "__main__":
-    app.run()
+    if "FLASK_ENV" in environ and environ["FLASK_ENV"] == "development":
+        app.run(host="0.0.0.0")
+    else:
+        app.run()
