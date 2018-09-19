@@ -54,10 +54,11 @@ export default class List extends Component {
 			<ul>
 				{
 					list.map((iconSet) => {
-						const { id, name, url, hasFont, hasSvg, hasPng, license, price } = iconSet;
+						const { id: setId, name, url, hasFont, hasSvg, hasPng, license, price } = iconSet;
 						return (
 							<ListEntry
-								key={id}
+								key={setId}
+								setId={setId}
 								name={name}
 								url={url}
 								hasFont={hasFont}

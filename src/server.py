@@ -37,6 +37,10 @@ if "FLASK_ENV" in environ and environ["FLASK_ENV"] == "development":
     def get_js():
         return send_from_directory(path_static, "bundle.js")
 
+    @app.route("/sample-icons/<path:icon_path>", methods=["GET"])
+    def get_sample_icon(icon_path):
+        return send_from_directory(path_static + "/sample-icons/", icon_path)
+
 
 @app.route("/iconsets", methods=["GET"])
 def get_icon_sets():
