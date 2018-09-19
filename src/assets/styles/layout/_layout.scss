@@ -7,13 +7,3 @@ body {
 	margin: 0 auto;
 	padding: 10vw;
 }
-
-.sample-icons-container {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-column-gap: $spacing-small;
-	grid-row-gap: $spacing-small;
-	margin-right: $spacing-large;
-	align-items: center;
-	color: $color-black;
-}
