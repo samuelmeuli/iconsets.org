@@ -1,10 +1,14 @@
 import React from 'react';
+import SimpleSvg from 'react-simple-svg';
+
+import logo from '../../assets/icons/logo.svg';
 
 
 export default function Header() {
+	const colorBlack = '#353535';
 	return (
 		<header>
-			<h1>iconsets.org</h1>
+			<SimpleSvg src={logo} className="logo" fill={colorBlack} />
 		</header>
 	);
 }
