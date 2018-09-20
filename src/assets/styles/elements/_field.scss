@@ -1,9 +1,33 @@
+.field-container {
+	display: grid;
+
+	@include small-screen {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-right: -$spacing-small;
+
+		.field {
+			margin-right: $spacing-small;
+			text-align: center;
+			flex: 1;
+			min-width: 40px;
+		}
+	}
+
+	@include large-screen {
+		grid-column-gap: $spacing-small;
+		grid-template-columns: repeat(5, 1fr);
+	}
+}
+
 .field {
-	flex: 1;
 	text-align: center;
 }
 
 .field-value {
-	display: inline-flex;
-	align-items: center;
+	display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
