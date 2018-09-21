@@ -14,5 +14,5 @@ pre-commit = "*"
 python_version = "3.6"
 
 [scripts]
-start = "FLASK_ENV=development python src/server.py"
-format = "pipenv run pre-commit run --all-files"
+start = "python src/server.py"
+format = "pre-commit run --all-files"
