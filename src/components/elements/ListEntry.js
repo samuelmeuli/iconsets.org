@@ -47,8 +47,8 @@ export default function ListEntry({ setId, name, url, hasFont, hasSvg, hasPng, l
 				<h2>{name}</h2>
 				<div className="field-container">
 					<InfoField label="SVG" value={hasSvg} />
-					<InfoField label="Font" value={hasFont} />
 					<InfoField label="PNG" value={hasPng} />
+					<InfoField label="Font" value={hasFont} />
 					<InfoField label="Price" value={price} />
 					<InfoField label="License" value={license} />
 				</div>

@@ -12,12 +12,12 @@ Do you know a great icon set that you'd like to add to the list?
   "id": "icon-set-name-in-kebab-case",
   "name": "Icon set name",
   "url": "https://www.example.com",
-  "dateAdded": "YYYY-MM-DD", // today's date
-  "hasFont": true | false,
-  "hasSvg": true | false,
-  "hasPng": true | false,
+  "date": "YYYY-MM-DD", // today's date
+  "svg": true | false,
+  "png": true | false,
+  "font": true | false,
   "license": "MIT" | "CC BY 4.0" | "multiple" | ...,
-  "price": "free" | "partly free" | "[x.xx] USD"
+  "price": "free" | "partly free" | "paid"
 }
 ```
 
