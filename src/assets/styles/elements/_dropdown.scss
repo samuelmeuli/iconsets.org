@@ -1,7 +1,7 @@
 .dropdown {
 	position: relative;
 	display: inline-block;
-	width: $width-button;
+	width: $button-width;
 
 	.button {
 		svg {
@@ -18,7 +18,6 @@
 		position: absolute;
 		z-index: 1;
 		width: 100%;
-		margin-top: 5px;
 		background: darken($color-grey-light, 8%);
 		overflow: hidden;
 		border-radius: $border-radius;

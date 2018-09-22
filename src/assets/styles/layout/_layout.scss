@@ -13,15 +13,22 @@ header {
 }
 
 .toolbar {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	margin-bottom: $spacing-large - $spacing-small;
-	margin-right: -$spacing-small;
+	& > div {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-right: -$spacing-small;
 
-	& > * {
-		flex: 1;
-		width: $width-button;
-		margin: 0 $spacing-small $spacing-small 0;
+		& > * {
+			margin: 0 $spacing-small ($spacing-small / 2) 0;
+		}
+	}
+
+	& > div:first-child {
+		margin-bottom: ($spacing-large / 2) - ($spacing-small / 2);
+	}
+
+	& > div:last-child {
+		margin-bottom: $spacing-large - ($spacing-small / 2);
 	}
 }

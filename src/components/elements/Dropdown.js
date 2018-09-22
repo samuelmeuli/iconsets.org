@@ -29,6 +29,7 @@ export default class Dropdown extends Component {
 
 		const { label } = props;
 		this.dropdownClass = `dropdown-${label.toLowerCase()}`;
+		this.iconSize = 20;
 
 		this.state = {
 			expanded: false
@@ -132,7 +133,12 @@ export default class Dropdown extends Component {
 					type="button"
 					onClick={this.toggleExpanded}
 				>
-					<SimpleSvg src={iconChevron} title="Feather" height={10} width={20} />
+					<SimpleSvg
+						src={iconChevron}
+						title="Feather"
+						height={this.iconSize}
+						width={this.iconSize}
+					/>
 					{label}
 				</button>
 				<ul className={expanded ? 'expanded' : 'collapsed'}>

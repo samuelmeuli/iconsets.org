@@ -10,12 +10,18 @@
 }
 
 .button {
-	display: inline-block;
-	width: $width-button;
-	padding: $spacing-small / 2;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: $button-height;
+	width: $button-width;
 	background: $color-grey-light;
 	border: none;
 	outline: none;
 	cursor: pointer;
 	text-align: center;
+}
+
+.button-icon {
+	width: $button-height;
 }
