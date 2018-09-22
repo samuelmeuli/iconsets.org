@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import FilterDropDown from './FilterDropDown';
-import SortDropDown from './SortDropDown';
+import Dropdown from './Dropdown';
 
 
 const propTypes = {
@@ -31,26 +30,27 @@ export default function Toolbar(props) {
 	} = props;
 	return (
 		<div className="toolbar">
-			<FilterDropDown
+			<Dropdown
 				className="dropdown-filter-format"
 				label="Format"
-				elements={filterFormat}
-				setElements={setFilterFormat}
+				filterElements={filterFormat}
+				setFilterElements={setFilterFormat}
 			/>
-			<FilterDropDown
+			<Dropdown
 				className="dropdown-filter-license"
 				label="License"
-				elements={filterLicense}
-				setElements={setFilterLicense}
+				filterElements={filterLicense}
+				setFilterElements={setFilterLicense}
 			/>
-			<FilterDropDown
+			<Dropdown
 				className="dropdown-filter-prices"
 				label="Price"
-				elements={filterPrice}
-				setElements={setFilterPrice}
+				filterElements={filterPrice}
+				setFilterElements={setFilterPrice}
 			/>
-			<SortDropDown
+			<Dropdown
 				className="dropdown-sort"
+				label="Sort"
 				sortMethods={sortMethods}
 				sortMethodActive={sortMethodActive}
 				setSortMethodActive={setSortMethodActive}
