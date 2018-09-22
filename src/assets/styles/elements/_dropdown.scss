@@ -1,24 +1,24 @@
 .dropdown {
 	position: relative;
 	display: inline-block;
-	margin-right: 20px;
+	width: $width-button;
 
-	button {
-		margin-bottom: 10px;
-
+	.button {
 		svg {
 			margin-right: 5px;
 			margin-left: -10px;
 		}
 
-		.active {
+		&.active {
 			box-shadow: $box-shadow-hover;
 		}
 	}
 
 	ul {
 		position: absolute;
+		z-index: 1;
 		width: 100%;
+		margin-top: 5px;
 		background: darken($color-grey-light, 8%);
 		overflow: hidden;
 		border-radius: $border-radius;

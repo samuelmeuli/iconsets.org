@@ -1,4 +1,4 @@
-button,
+.button,
 .list-entry {
 	transition: $transition;
 	border-radius: $border-radius;
@@ -9,9 +9,11 @@ button,
 	}
 }
 
-button {
-	width: 150px;
+.button {
+	display: inline-block;
+	width: $width-button;
 	padding: $spacing-small / 2;
+	background: $color-grey-light;
 	border: none;
 	outline: none;
 	cursor: pointer;

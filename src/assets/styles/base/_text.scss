@@ -24,7 +24,7 @@ a {
 	text-decoration: none;
 }
 
-button {
+.button {
 	font: inherit;
 	font-weight: $font-weight-bold;
 	text-align: left;
@@ -36,16 +36,26 @@ header {
 }
 
 footer,
-button,
+.button,
 .field-label,
 .dropdown ul {
 	font-size: 80%;
 	text-transform: uppercase;
 }
 
-button,
+.button,
 .dropdown {
 	user-select: none;
+}
+
+.toolbar {
+	& > * {
+		text-align: center;
+	}
+
+	ul {
+		text-align: left;
+	}
 }
 
 footer,
