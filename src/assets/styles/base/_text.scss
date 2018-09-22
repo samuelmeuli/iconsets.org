@@ -24,13 +24,32 @@ a {
 	text-decoration: none;
 }
 
+button {
+	font: inherit;
+	font-weight: $font-weight-bold;
+	text-align: left;
+	line-height: 1;
+}
+
 header {
 	text-align: center;
 }
 
-footer, .field-label {
+footer,
+button,
+.field-label,
+.dropdown ul {
 	font-size: 80%;
 	text-transform: uppercase;
+}
+
+button,
+.dropdown {
+	user-select: none;
+}
+
+footer,
+.field-label {
 	color: $color-grey;
 }
 

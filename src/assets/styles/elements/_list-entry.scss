@@ -1,10 +1,7 @@
 .list-entry {
 	padding: $spacing-large;
 	background: $color-grey-light;
-	border-radius: $border-radius;
 	margin-bottom: $spacing-large;
-	box-shadow: $box-shadow;
-	transition: $transition;
 
 	@include small-screen {
 		display: grid;
@@ -26,11 +23,6 @@
 
 	@include large-screen {
 		display: flex;
-	}
-
-	&:hover {
-		box-shadow: $box-shadow-hover;
-		transition: $transition;
 	}
 }
 

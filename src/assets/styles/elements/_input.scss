@@ -1,0 +1,19 @@
+button,
+.list-entry {
+	transition: $transition;
+	border-radius: $border-radius;
+
+	&:hover {
+		box-shadow: $box-shadow-hover;
+		transition: $transition;
+	}
+}
+
+button {
+	width: 150px;
+	padding: $spacing-small / 2;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+}

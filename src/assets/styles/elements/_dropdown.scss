@@ -1,0 +1,44 @@
+.dropdown {
+	position: relative;
+	display: inline-block;
+	margin-right: 20px;
+
+	button {
+		margin-bottom: 10px;
+
+		svg {
+			margin-right: 5px;
+			margin-left: -10px;
+		}
+
+		.active {
+			box-shadow: $box-shadow-hover;
+		}
+	}
+
+	ul {
+		position: absolute;
+		width: 100%;
+		background: darken($color-grey-light, 8%);
+		overflow: hidden;
+		border-radius: $border-radius;
+
+		&.collapsed {
+			max-height: 0;
+			transition: $transition;
+			padding: 0 ($spacing-small / 2);
+		}
+
+		&.expanded {
+			max-height: 200px;
+			transition: $transition;
+			padding: $spacing-small / 2;
+			box-shadow: $box-shadow;
+		}
+	}
+
+	input[type="checkbox"],
+	input[type="radio"]{
+		margin-right: 8px;
+	}
+}
