@@ -1,6 +1,10 @@
+body {
+	background: map-get(map-get($themes, "light"), "background");
+}
+
 .app-outer {
-	@include background-color("background");
 	transition: $transition;
+	@include background-color("background");
 }
 
 .app-inner {
