@@ -31,10 +31,12 @@ export default class App extends Component {
 		const { theme, toggleTheme } = this.state;
 		return (
 			<ThemeContext.Provider value={{ theme, toggleTheme }}>
-				<div className={`app theme-${theme}`}>
-					<Header />
-					<Main />
-					<Footer />
+				<div className={`app-outer theme-${theme}`}>
+					<div className="app-inner">
+						<Header />
+						<Main />
+						<Footer />
+					</div>
 				</div>
 			</ThemeContext.Provider>
 		);

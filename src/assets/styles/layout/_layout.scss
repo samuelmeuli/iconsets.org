@@ -1,9 +1,12 @@
-.app {
+.app-outer {
+	@include background-color("background");
+	transition: $transition;
+}
+
+.app-inner {
 	max-width: 1100px;
 	margin: 0 auto;
 	padding: 10vw;
-	@include background-color("background");
-	transition: $transition;
 }
 
 header {
