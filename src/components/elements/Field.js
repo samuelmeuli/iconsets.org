@@ -16,6 +16,8 @@ const propTypes = {
 };
 
 export default function Field({ label, value }) {
+	const colorGreen = '#51D765';
+	const colorRed = '#F44000';
 	const iconSize = 30;
 
 	let valueOutput;
@@ -26,7 +28,7 @@ export default function Field({ label, value }) {
 				title={value ? 'Yes' : 'No'}
 				height={iconSize}
 				width={iconSize}
-				stroke={value ? '#51D765' : '#F44000'}
+				stroke={value ? colorGreen : colorRed}
 			/>
 		);
 	} else {

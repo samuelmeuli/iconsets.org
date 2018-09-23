@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import SimpleSvg from 'react-simple-svg';
 import { forceCheck } from 'react-lazyload';
 
+import imgAlertTriangle from '../../assets/icons/alert-triangle.svg';
 import ListEntry from './ListEntry';
 
 
@@ -15,6 +17,12 @@ const propTypes = {
 };
 
 export default class List extends Component {
+	constructor() {
+		super();
+		this.iconSize = 20;
+		this.colorRed = '#F44000';
+	}
+
 	componentDidUpdate() {
 		// Re-check which lazy-load elements are inside viewport
 		forceCheck();
@@ -62,52 +70,77 @@ export default class List extends Component {
 
 	render() {
 		const { list, loadingState } = this.props;
+		let setList;
 
-		if (loadingState === 'loading') {
-			return (
-				<p>Loading...</p>
-			);
-		}
 		if (loadingState === 'error') {
-			return (
-				<p>Error while loading icon sets</p>
+			// On error: Display error message
+			setList = (
+				<p className="error">
+					<SimpleSvg
+						src={imgAlertTriangle}
+						title=""
+						height={this.iconSize}
+						width={this.iconSize}
+						stroke={this.colorRed}
+					/>
+					Error while loading icon sets
+				</p>
 			);
+		} else if (loadingState === 'loading') {
+			// While loading: Display loading spinner
+			setList = (
+				<div className="spinner-container">
+					<div className="spinner">
+						<div className="dot1" />
+						<div className="dot2" />
+					</div>
+				</div>
+			);
+		} else {
+			// Display list
+			const filteredList = this.filterList(list);
+			const sortedList = this.sortList(filteredList);
+			if (sortedList.length === 0) {
+				setList = <p>No matching icon sets found</p>;
+			} else {
+				setList = (
+					<ul>
+						{
+							sortedList.map((iconSet) => {
+								const {
+									id: setId,
+									name,
+									url,
+									font: hasFont,
+									svg: hasSvg,
+									png: hasPng,
+									license,
+									price
+								} = iconSet;
+								return (
+									<ListEntry
+										key={setId}
+										setId={setId}
+										name={name}
+										url={url}
+										hasFont={hasFont}
+										hasSvg={hasSvg}
+										hasPng={hasPng}
+										license={license}
+										price={price}
+									/>
+								);
+							})
+						}
+					</ul>
+				);
+			}
 		}
-		const filteredList = this.filterList(list);
-		const sortedList = this.sortList(filteredList);
-		if (sortedList.length === 0) {
-			return <p>No matching icon sets found</p>;
-		}
+
 		return (
-			<ul>
-				{
-					sortedList.map((iconSet) => {
-						const {
-							id: setId,
-							name,
-							url,
-							font: hasFont,
-							svg: hasSvg,
-							png: hasPng,
-							license,
-							price
-						} = iconSet;
-						return (
-							<ListEntry
-								key={setId}
-								setId={setId}
-								name={name}
-								url={url}
-								hasFont={hasFont}
-								hasSvg={hasSvg}
-								hasPng={hasPng}
-								license={license}
-								price={price}
-							/>
-						);
-					})
-				}
-			</ul>
+			<div className="set-list">
+				{setList}
+			</div>
 		);
 	}
 }

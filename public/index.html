@@ -5,11 +5,54 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>iconsets.org</title>
+
+		<!-- Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Overpass:300,900" rel="stylesheet">
+
+		<!-- Loading spinner -->
+		<style>
+			/* SpinKit by Tobias Ahlin */
+			body {
+				background: #F0F0F0;
+				margin: 0;
+			}
+
+			.spinner-container {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			#root > .spinner-container {
+				height: 100vh;
+			}
+
+			.spinner {
+				width: 40px;
+				height: 40px;
+				margin: 40px 0;
+				background-color: #353535;
+				animation: sk-rotateplane 1.2s infinite ease-in-out;
+			}
+
+			@keyframes sk-rotateplane {
+				0% { transform: perspective(120px) rotateX(0deg) rotateY(0deg); }
+				50% { transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg); }
+				100% { transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg); }
+			}
+		</style>
 	</head>
 
 	<body>
-		<div id="root"></div>
+		<div id="root">
+			<!-- Loading spinner (displayed before React app is rendered into #root) -->
+			<div class="spinner-container">
+				<div class="spinner">
+					<div class="dot1"></div>
+					<div class="dot2"></div>
+				</div>
+			</div>
+		</div>
 		<noscript>You need to enable JavaScript to run this app.</noscript>
 		<script type="text/javascript" src="/bundle.js"></script>
 	</body>

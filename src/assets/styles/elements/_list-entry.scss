@@ -1,6 +1,5 @@
 .list-entry {
 	padding: $spacing-large;
-	margin-bottom: $spacing-large;
 	@include background-color("container");
 
 	@include small-screen {
@@ -24,6 +23,10 @@
 	@include large-screen {
 		display: flex;
 	}
+}
+
+.list-entry + .list-entry {
+	margin-top: $spacing-large;
 }
 
 .sample-icons-container {

@@ -59,6 +59,11 @@ footer,
 	}
 }
 
+.error {
+	line-height: 0;
+	@include color("text-error");
+}
+
 footer,
 .field-label {
 	@include color("text-label");

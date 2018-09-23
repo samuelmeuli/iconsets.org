@@ -1,7 +1,3 @@
-body {
-	background: map-get(map-get($themes, "light"), "background");
-}
-
 .app-outer {
 	transition: $transition;
 	@include background-color("background");
@@ -35,5 +31,19 @@ header {
 
 	& > div:last-child {
 		margin-bottom: $spacing-large - ($spacing-small / 2);
+	}
+}
+
+.set-list {
+	margin-bottom: $spacing-large;
+}
+
+.error {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	svg {
+		margin-right: $spacing-inline-icon;
 	}
 }
