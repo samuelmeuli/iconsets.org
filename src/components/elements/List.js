@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { forceCheck } from 'react-lazyload';
 
 import ListEntry from './ListEntry';
 
@@ -14,6 +15,11 @@ const propTypes = {
 };
 
 export default class List extends Component {
+	componentDidUpdate() {
+		// Re-check which lazy-load elements are inside viewport
+		forceCheck();
+	}
+
 	filterList(list) {
 		const { filterFormat, filterLicense, filterPrice } = this.props;
 		return list.filter((entry) => {

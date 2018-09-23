@@ -46,7 +46,7 @@ export default function ListEntry({ setId, name, url, hasFont, hasSvg, hasPng, l
 
 	return (
 		<a href={url} className="list-entry" target="_blank" rel="noopener noreferrer">
-			<LazyLoad height={300} offset={500} once>
+			<LazyLoad height={140} offset={500} once>
 				<ul className="sample-icons-container">
 					{sampleIcons}
 				</ul>
