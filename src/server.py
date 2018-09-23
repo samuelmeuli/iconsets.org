@@ -5,25 +5,36 @@ from anonymizeip import anonymize_ip
 from flask import Flask, jsonify, redirect, request, send_from_directory
 
 app = Flask(__name__)
-path_dir = path.dirname(path.realpath(__file__))
-path_icon_set_json = path_dir + "/../icon-sets.json"
-path_view_json = path_dir + "/../views.json"
-path_static = path_dir + "/../public"
+current_dir = path.dirname(path.realpath(__file__))
+path_list = current_dir + "/../icon-sets.json"
+path_views = current_dir + "/../views.json"
+path_static = current_dir + "/../public"
 
 
-# Load list of icon sets to memory
-with open(path_icon_set_json, "r") as icon_sets_file:
-    icon_sets = json.load(icon_sets_file)
+def load_list_file():
+    """Load list of icon sets to memory"""
 
-# Load view IP addresses to memory (view_addresses) and create cache for total
-# number of unique views per icon set (view_counts)
-view_addresses = {}
-view_counts = {}
-if path.exists(path_view_json):
-    with open(path_view_json, "r") as view_file:
-        view_addresses = json.load(view_file)
-        for icon_set_id, ip_addresses in view_addresses.items():
-            view_counts[icon_set_id] = len(ip_addresses)
+    with open(path_list, "r") as list_file:
+        return json.load(list_file)
+
+
+def load_views_file():
+    """Load or create views file and load IP addresses into memory. Create cache for total number of
+    unique views per icon set (view_counts)"""
+
+    if not path.exists(path_views):
+        with open(path_views, "w+") as view_file:
+            addresses = {}
+            counts = {}
+            json.dump({}, view_file)
+    else:
+        with open(path_views, "r") as view_file:
+            addresses = json.load(view_file)
+            counts = {}
+            for icon_set_id, ip_addresses in addresses.items():
+                counts[icon_set_id] = len(ip_addresses)
+
+    return addresses, counts
 
 
 # Serve static files if in development mode (handled by nginx in production)
@@ -59,10 +70,9 @@ def get_icon_sets():
 
 @app.route("/views", methods=["PATCH"])
 def register_view():
-    """Add IP address of client to icon set entry in views.json unless it
-    already exists"""
+    """Add IP address of client to icon set entry in views.json unless it already exists"""
 
-    icon_set_id = request.form["icon_set_id"]
+    icon_set_id = request.args.get("iconSetId")
     ip_address = request.remote_addr
     ip_address_anonymized = anonymize_ip(ip_address)
 
@@ -76,7 +86,7 @@ def register_view():
     else:
         return ""
 
-    with open(path_view_json, "w+") as view_file:
+    with open(path_views, "w+") as view_file:
         # Write updated object to file
         json.dump(view_addresses, view_file)
 
@@ -90,8 +100,10 @@ def catch_all(invalid_path):
     return redirect("/", code=302)
 
 
-if __name__ == "__main__":
-    if "FLASK_ENV" in environ and environ["FLASK_ENV"] == "development":
-        app.run(host="0.0.0.0", port=3000)
-    else:
-        app.run()
+icon_sets = load_list_file()
+view_addresses, view_counts = load_views_file()
+
+if "FLASK_ENV" in environ and environ["FLASK_ENV"] == "development":
+    app.run(host="0.0.0.0", port=3000)
+else:
+    app.run()

@@ -45,7 +45,17 @@ export default function ListEntry({ setId, name, url, hasFont, hasSvg, hasPng, l
 	}
 
 	return (
-		<a href={url} className="list-entry" target="_blank" rel="noopener noreferrer">
+		<a
+			href={url}
+			onClick={() => {
+				window.fetch(`/views?iconSetId=${setId}`, {
+					method: 'PATCH'
+				});
+			}}
+			className="list-entry"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
 			<LazyLoad height={140} offset={500} once>
 				<ul className="sample-icons-container">
 					{sampleIcons}
