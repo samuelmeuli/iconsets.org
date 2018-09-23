@@ -1,5 +1,16 @@
 [
 	{
+		"id": "batch",
+		"name": "Batch",
+		"url": "http://adamwhitcroft.com/batch",
+		"date": "2018-09-23",
+		"svg": true,
+		"png": true,
+		"font": true,
+		"license": "Other",
+		"price": "free"
+	},
+	{
 		"id": "entypo",
 		"name": "Entypo+",
 		"url": "http://www.entypo.com",
@@ -33,6 +44,50 @@
 		"price": "partly free"
 	},
 	{
+		"id": "fontice",
+		"name": "Fontice",
+		"url": "https://uxwing.com",
+		"date": "2018-09-23",
+		"svg": true,
+		"png": true,
+		"font": true,
+		"license": "multiple",
+		"price": "free"
+	},
+	{
+		"id": "foundation-3",
+		"name": "Foundation Icon Fonts 3",
+		"url": "https://zurb.com/playground/foundation-icon-fonts-3",
+		"date": "2018-09-23",
+		"svg": true,
+		"png": false,
+		"font": true,
+		"license": "MIT",
+		"price": "free"
+	},
+	{
+		"id": "ionicons-md",
+		"name": "Ionicons (Material Design)",
+		"url": "https://ionicons.com",
+		"date": "2018-09-23",
+		"svg": true,
+		"png": false,
+		"font": true,
+		"license": "MIT",
+		"price": "free"
+	},
+	{
+		"id": "ionicons-ios",
+		"name": "Ionicons (iOS)",
+		"url": "https://ionicons.com",
+		"date": "2018-09-23",
+		"svg": true,
+		"png": false,
+		"font": true,
+		"license": "MIT",
+		"price": "free"
+	},
+	{
 		"id": "maki",
 		"name": "Maki",
 		"url": "https://www.mapbox.com/maki-icons/",
@@ -41,6 +96,17 @@
 		"png": false,
 		"font": false,
 		"license": "CC0-1.0",
+		"price": "free"
+	},
+	{
+		"id": "material-design",
+		"name": "Material Design",
+		"url": "https://material.io/tools/icons",
+		"date": "2018-09-23",
+		"svg": true,
+		"png": true,
+		"font": true,
+		"license": "Apache-2.0",
 		"price": "free"
 	},
 	{
@@ -75,6 +141,17 @@
 		"font": true,
 		"license": "multiple",
 		"price": "free"
+	},
+	{
+		"id": "pictonic",
+		"name": "Pictonic",
+		"url": "https://pictonic.co",
+		"date": "2018-09-23",
+		"svg": true,
+		"png": true,
+		"font": true,
+		"license": "Other",
+		"price": "partly free"
 	},
 	{
 		"id": "typicons",
