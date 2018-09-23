@@ -1,9 +1,9 @@
-body {
+.app {
 	font-family: $font-family;
 	font-size: $font-size;
 	font-weight: $font-weight-normal;
 	line-height: $line-height;
-	color: $color-black;
+	@include color("text");
 }
 
 h1 {
@@ -29,6 +29,7 @@ a {
 	font-weight: $font-weight-bold;
 	text-align: left;
 	line-height: 0;
+	color: inherit;
 }
 
 header {
@@ -60,7 +61,7 @@ footer,
 
 footer,
 .field-label {
-	color: $color-grey;
+	@include color("text-label");
 }
 
 footer {

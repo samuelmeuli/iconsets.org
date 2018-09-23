@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SimpleSvg from 'react-simple-svg';
 
-import Dropdown from './Dropdown';
 import iconMoon from '../../assets/icons/moon.svg';
 import iconSun from '../../assets/icons/sun.svg';
 import iconPlus from '../../assets/icons/plus.svg';
+import Dropdown from './Dropdown';
+import ThemeContext from '../ThemeContext';
 
 
 const propTypes = {
@@ -44,9 +45,24 @@ export default function Toolbar(props) {
 				>
 					<SimpleSvg src={iconPlus} title="Add icon set" height={iconSize} width={iconSize} />
 				</a>
-				<button className="button button-icon" type="button">
-					<SimpleSvg src={iconMoon} title="Toggle dark mode" height={iconSize} width={iconSize} />
-				</button>
+				<ThemeContext.Consumer>
+					{
+						({ theme, toggleTheme }) => (
+							<button
+								className="button button-icon"
+								type="button"
+								onClick={toggleTheme}
+							>
+								<SimpleSvg
+									src={theme === 'light' ? iconMoon : iconSun}
+									title="Toggle dark mode"
+									height={iconSize}
+									width={iconSize}
+								/>
+							</button>
+						)
+					}
+				</ThemeContext.Consumer>
 			</div>
 			<div>
 				<div>

@@ -4,7 +4,7 @@
 	border-radius: $border-radius;
 
 	&:hover {
-		box-shadow: $box-shadow-hover;
+		@include box-shadow("shadow-hover");
 		transition: $transition;
 	}
 }
@@ -15,11 +15,11 @@
 	justify-content: center;
 	height: $button-height;
 	width: $button-width;
-	background: $color-grey-light;
 	border: none;
 	outline: none;
 	cursor: pointer;
 	text-align: center;
+	@include background-color("container");
 }
 
 .button-icon {

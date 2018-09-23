@@ -10,7 +10,7 @@
 		}
 
 		&.active {
-			box-shadow: $box-shadow-hover;
+			@include box-shadow("shadow-hover");
 		}
 	}
 
@@ -18,9 +18,9 @@
 		position: absolute;
 		z-index: 1;
 		width: 100%;
-		background: darken($color-grey-light, 8%);
 		overflow: hidden;
 		border-radius: $border-radius;
+		@include background-color("popup");
 
 		&.collapsed {
 			max-height: 0;
@@ -32,7 +32,7 @@
 			max-height: 200px;
 			transition: $transition;
 			padding: $spacing-small / 2;
-			box-shadow: $box-shadow;
+			@include box-shadow("shadow");
 		}
 	}
 

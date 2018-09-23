@@ -1,7 +1,7 @@
 .list-entry {
 	padding: $spacing-large;
-	background: $color-grey-light;
 	margin-bottom: $spacing-large;
+	@include background-color("container");
 
 	@include small-screen {
 		display: grid;
@@ -27,7 +27,7 @@
 }
 
 .sample-icons-container {
-	color: $color-black;
+	@include color("text");
 
 	@include large-screen {
 		display: grid;

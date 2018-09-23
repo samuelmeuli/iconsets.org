@@ -1,11 +1,27 @@
 // Colors
-$color-black: #353535;
-$color-grey: #A0A0A0;
-$color-grey-light: #FCFCFC;
-$color-white: #F5F5F5;
+$themes: (
+  "light": (
+		"background": #F0F0F0,
+		"container": #FCFCFC,
+		"text": #353535,
+		"text-label": #A0A0A0,
+		"popup": #EAEAEA,
+		"shadow": 0 0 5px 3px rgba(0, 0, 0, 0.025),
+		"shadow-hover": 0 0 10px 5px rgba(0, 0, 0, 0.075)
+  ),
+  "dark": (
+		"background": #353535,
+		"container": #515151,
+		"text": #D0D0D0,
+		"text-label": #A5A5A5,
+		"popup": #6D6D6D,
+		"shadow": 0 0 5px 3px rgba(255, 255, 255, 0.025),
+		"shadow-hover": 0 0 10px 5px rgba(255, 255, 255, 0.075)
+  )
+) !default;
 
 // Fonts
-$font-family: 'Overpass', sans-serif;
+$font-family: "Overpass", sans-serif;
 $font-size: 18px;
 $font-weight-normal: 300;
 $font-weight-bold: 900;
@@ -17,8 +33,6 @@ $spacing-large: 40px;
 
 // Other
 $border-radius: 5px;
-$box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.025);
-$box-shadow-hover: 0 0 10px 5px rgba(0, 0, 0, 0.075);
 $transition: 0.2s;
 $button-height: 35px;
 $button-width: 150px;

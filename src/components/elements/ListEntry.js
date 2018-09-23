@@ -4,6 +4,7 @@ import LazyLoad from 'react-lazyload';
 import SimpleSvg from 'react-simple-svg';
 
 import InfoField from './Field';
+import ThemeContext from '../ThemeContext';
 
 
 const propTypes = {
@@ -18,20 +19,27 @@ const propTypes = {
 };
 
 export default function ListEntry({ setId, name, url, hasFont, hasSvg, hasPng, license, price }) {
-	const colorBlack = '#353535';
+	const colorTextLight = '#353535';
+	const colorTextDark = '#D0D0D0';
 	const iconSize = 45;
 
 	const sampleIcons = [];
 	for (let i = 1; i <= 6; i += 1) {
 		sampleIcons.push(
 			<li key={`sample-icon-${i}`}>
-				<SimpleSvg
-					src={`/sample-icons/${setId}/sample-icon-${i}.svg#icon`}
-					className="sample-icon"
-					height={iconSize}
-					width={iconSize}
-					fill={colorBlack}
-				/>
+				<ThemeContext.Consumer>
+					{
+						({ theme }) => (
+							<SimpleSvg
+								src={`/sample-icons/${setId}/sample-icon-${i}.svg#icon`}
+								className="sample-icon"
+								height={iconSize}
+								width={iconSize}
+								fill={theme === 'light' ? colorTextLight : colorTextDark}
+							/>
+						)
+					}
+				</ThemeContext.Consumer>
 			</li>
 		);
 	}
