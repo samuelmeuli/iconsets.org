@@ -6,9 +6,9 @@ from flask import Flask, jsonify, redirect, request, send_from_directory
 
 app = Flask(__name__)
 current_dir = path.dirname(path.realpath(__file__))
-path_list = current_dir + "/../icon-sets.json"
-path_views = current_dir + "/../views.json"
-path_static = current_dir + "/../public"
+path_list = current_dir + "/icon-sets.json"
+path_views = current_dir + "/views.json"
+path_static = current_dir + "/public"
 
 
 def load_list_file():
@@ -103,7 +103,9 @@ def catch_all(invalid_path):
 icon_sets = load_list_file()
 view_addresses, view_counts = load_views_file()
 
-if "FLASK_ENV" in environ and environ["FLASK_ENV"] == "development":
-    app.run(host="0.0.0.0", port=3000)
-else:
-    app.run()
+
+if __name__ == "__main__":
+    if "FLASK_ENV" in environ and environ["FLASK_ENV"] == "development":
+        app.run(host="0.0.0.0", port=3000)
+    else:
+        app.run()
