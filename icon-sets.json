@@ -11,6 +11,28 @@
 		"price": "free"
 	},
 	{
+		"id": "boxicons",
+		"name": "BoxIcons",
+		"url": "https://boxicons.com",
+		"date": "2018-09-26",
+		"svg": true,
+		"png": false,
+		"font": true,
+		"license": "Multiple",
+		"price": "free"
+	},
+	{
+		"id": "bytesize",
+		"name": "Bytesize",
+		"url": "https://danklammer.com/bytesize-icons",
+		"date": "2018-09-26",
+		"svg": true,
+		"png": false,
+		"font": false,
+		"license": "MIT",
+		"price": "free"
+	},
+	{
 		"id": "entypo",
 		"name": "Entypo+",
 		"url": "http://www.entypo.com",
@@ -55,6 +77,17 @@
 		"price": "free"
 	},
 	{
+		"id": "fontisto",
+		"name": "Fontisto",
+		"url": "https://fontisto.com",
+		"date": "2018-09-26",
+		"svg": true,
+		"png": false,
+		"font": true,
+		"license": "MIT",
+		"price": "free"
+	},
+	{
 		"id": "foundation-3",
 		"name": "Foundation Icon Fonts 3",
 		"url": "https://zurb.com/playground/foundation-icon-fonts-3",
@@ -62,6 +95,39 @@
 		"svg": true,
 		"png": false,
 		"font": true,
+		"license": "MIT",
+		"price": "free"
+	},
+	{
+		"id": "gridicons",
+		"name": "Gridicons",
+		"url": "http://automattic.github.io/gridicons",
+		"date": "2018-09-26",
+		"svg": true,
+		"png": false,
+		"font": false,
+		"license": "GPLv2",
+		"price": "free"
+	},
+	{
+		"id": "icons8-flat-color",
+		"name": "Icons8 Flat Color Icons",
+		"url": "https://icons8.com/c/flat-color-icons",
+		"date": "2018-09-26",
+		"svg": true,
+		"png": false,
+		"font": false,
+		"license": "GBL",
+		"price": "free"
+	},
+	{
+		"id": "ikonate",
+		"name": "Ikonate",
+		"url": "https://www.ikonate.com",
+		"date": "2018-09-26",
+		"svg": true,
+		"png": false,
+		"font": false,
 		"license": "MIT",
 		"price": "free"
 	},
@@ -85,6 +151,17 @@
 		"png": false,
 		"font": true,
 		"license": "MIT",
+		"price": "free"
+	},
+	{
+		"id": "linea",
+		"name": "Linea",
+		"url": "http://www.linea.io",
+		"date": "2018-09-26",
+		"svg": true,
+		"png": true,
+		"font": true,
+		"license": "CC BY 4.0",
 		"price": "free"
 	},
 	{
@@ -152,6 +229,17 @@
 		"font": true,
 		"license": "Other",
 		"price": "partly free"
+	},
+	{
+		"id": "themify",
+		"name": "Themify",
+		"url": "https://themify.me/themify-icons",
+		"date": "2018-09-26",
+		"svg": true,
+		"png": false,
+		"font": true,
+		"license": "OFL",
+		"price": "free"
 	},
 	{
 		"id": "typicons",
