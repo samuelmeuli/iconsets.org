@@ -1,5 +1,14 @@
 # iconsets.org
 
+**Icon set discovery website for designers**
+
+Looking for an icon set for your next website? [iconsets.org](https://iconsets.org) features a curated list of pretty icon sets.
+
+To help you find the icon set which suits your needs, the website lets you filter icon sets by format, license, and price. All sets are presented with sample icons, and you can test their appearance on light and dark backgrounds.  
+
+![Screenshots](screenshots.png)
+
+
 ## Adding an icon set
 
 Do you know a great icon set that you'd like to add to the list?
