@@ -55,17 +55,16 @@ export default class List extends Component {
 
 	sortList(list) {
 		const { sortMethodActive } = this.props;
-		let property;
 		if (sortMethodActive === 'Name') {
-			property = 'name';
-		} else if (sortMethodActive === 'Date added') {
-			property = 'date';
-		} else if (sortMethodActive === 'Popularity') {
-			property = 'views';
-		} else {
-			throw Error(`Sort method "${sortMethodActive}" does not exist`);
+			return list.sort((a, b) => a.name.localeCompare(b.name));
 		}
-		return list.sort((a, b) => String(a[property]).localeCompare(String(b[property])));
+		if (sortMethodActive === 'Date added') {
+			return list.sort((a, b) => new Date(b.date) - new Date(a.date));
+		}
+		if (sortMethodActive === 'Popularity') {
+			return list.sort((a, b) => b.views - a.views);
+		}
+		throw Error(`Sort method "${sortMethodActive}" does not exist`);
 	}
 
 	render() {
