@@ -74,13 +74,12 @@ export default class List extends Component {
 		if (loadingState === 'error') {
 			// On error: Display error message
 			setList = (
-				<p className="error">
+				<p className="banner error">
 					<SimpleSvg
 						src={imgAlertTriangle}
 						title=""
 						height={this.iconSize}
 						width={this.iconSize}
-						stroke={this.colorRed}
 					/>
 					Error while loading icon sets
 				</p>
@@ -100,7 +99,11 @@ export default class List extends Component {
 			const filteredList = this.filterList(list);
 			const sortedList = this.sortList(filteredList);
 			if (sortedList.length === 0) {
-				setList = <p>No matching icon sets found</p>;
+				setList = (
+					<p className="banner">
+						No matching icon sets found
+					</p>
+				);
 			} else {
 				setList = (
 					<ul>

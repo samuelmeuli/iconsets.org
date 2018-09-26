@@ -38,10 +38,11 @@ header {
 	margin-bottom: $spacing-large;
 }
 
-.error {
+.banner {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: $spacing-large 0;
 
 	svg {
 		margin-right: $spacing-inline-icon;

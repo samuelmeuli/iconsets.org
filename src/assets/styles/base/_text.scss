@@ -59,9 +59,12 @@ footer,
 	}
 }
 
-.error {
+.banner {
 	line-height: 0;
-	@include color("text-error");
+
+	&.error {
+		@include color("text-error");
+	}
 }
 
 footer,
