@@ -4,7 +4,7 @@
 
 Looking for an icon set for your next website? [iconsets.org](https://iconsets.org) features a curated list of pretty icon sets.
 
-To help you find the icon set which suits your needs, the website lets you filter icon sets by format, license, and price. All sets are presented with sample icons, and you can test their appearance on light and dark backgrounds.  
+To help you find the icon set which suits your needs, the website lets you filter icon sets by format, license, and price. All sets are presented with sample icons, and you can test their appearance on light and dark backgrounds.
 
 ![Screenshots](screenshots.png)
 
@@ -33,6 +33,7 @@ Do you know a great icon set that you'd like to add to the list?
 3. Add six sample icons of your icon set under `public/sample-icons/[set-id]/sample-icon-[1-6].svg`. Please make sure of the following:
     * The SVG needs to contain `id="icon"` (because it is loaded with `<use>`)
     * The SVG must have the `viewBox` attribute set correctly (according to its height/width)
+    * The color of the strokes or fills might need to be set to `currentColor` to match the light and dark themes
 4. Run the web app and test whether the icon set is rendered correctly (see [Development](#development))
 5. Create a pull request
 
