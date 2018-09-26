@@ -51,3 +51,8 @@ Bundle the JavaScript files with Webpack and start the Flask server:
 `FLASK_ENV=development pipenv run start` and `yarn start`
 
 The app is now running on `localhost:3000`.
+
+
+## Credits
+
+"Glowing star" emoji by [Twitter, Inc. (Twemoji)](https://github.com/twitter/twemoji), licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0)
