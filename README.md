@@ -43,9 +43,9 @@ Do you know a great icon set that you'd like to add to the list?
 Clone the project and install all dependencies:
 
 1. `git clone`
-2. `pipenv install --dev`
-3. `pipenv run pre-commit install`
-4. `yarn install`
+2. `pipenv install --dev` to install Python dependencies
+3. `pipenv run init` to install pre-commit hooks
+4. `yarn install` to install NPM dependencies
 
 Bundle the JavaScript files with Webpack and start the Flask server:
 
