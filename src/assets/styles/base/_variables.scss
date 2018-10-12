@@ -1,6 +1,6 @@
 // Colors
 $themes: (
-  "light": (
+	"light": (
 		"background": #F0F0F0,
 		"container": #FCFCFC,
 		"text": #353535,
@@ -9,8 +9,8 @@ $themes: (
 		"popup": #DFDFDF,
 		"shadow": 0 0 5px 3px rgba(0, 0, 0, 0.025),
 		"shadow-hover": 0 0 10px 5px rgba(0, 0, 0, 0.075)
-  ),
-  "dark": (
+	),
+	"dark": (
 		"background": #353535,
 		"container": #515151,
 		"text": #D0D0D0,
@@ -19,7 +19,7 @@ $themes: (
 		"popup": #6D6D6D,
 		"shadow": 0 0 5px 3px rgba(255, 255, 255, 0.025),
 		"shadow-hover": 0 0 10px 5px rgba(255, 255, 255, 0.075)
-  )
+	)
 ) !default;
 
 // Fonts
