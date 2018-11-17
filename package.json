@@ -9,7 +9,7 @@
 	"homepage": "https://iconsets.org",
 	"license": "MIT",
 	"scripts": {
-		"start": "webpack --mode development --watch",
+		"start": "webpack-dev-server --host 0.0.0.0 --mode development --port 3000",
 		"build": "webpack --mode production",
 		"lint": "eslint ."
 	},
@@ -27,6 +27,7 @@
 		"@babel/preset-react": "^7.0.0",
 		"autoprefixer": "^9.1.5",
 		"babel-loader": "^8.0.4",
+		"copy-webpack-plugin": "^4.6.0",
 		"css-loader": "^1.0.0",
 		"eslint": "^5.3.0",
 		"eslint-config-airbnb": "17.1.0",
@@ -40,6 +41,7 @@
 		"svg-inline-loader": "^0.8.0",
 		"url-loader": "^1.0.1",
 		"webpack": "^4.12.1",
-		"webpack-cli": "^3.0.8"
+		"webpack-cli": "^3.0.8",
+		"webpack-dev-server": "^3.1.10"
 	}
 }

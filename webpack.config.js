@@ -1,9 +1,10 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
 	entry: './src/index.js',
 	output: {
-		path: path.resolve(__dirname, 'public'),
+		path: path.resolve(__dirname, 'dist'),
 		filename: 'bundle.js'
 	},
 	module: {
@@ -27,5 +28,14 @@ module.exports = {
 				loader: 'svg-inline-loader'
 			}
 		]
+	},
+	plugins: [
+		new CopyWebpackPlugin(['./public/'])
+	],
+	devServer: {
+		proxy: [{
+			context: ['/iconsets', '/views'],
+			target: 'http://localhost:5000'
+		}]
 	}
 };

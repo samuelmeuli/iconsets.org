@@ -2,7 +2,7 @@ import json
 from os import environ, path
 
 from anonymizeip import anonymize_ip
-from flask import Flask, jsonify, redirect, request, send_from_directory
+from flask import Flask, jsonify, redirect, request
 
 app = Flask(__name__)
 current_dir = path.dirname(path.realpath(__file__))
@@ -35,26 +35,6 @@ def load_views_file():
                 counts[icon_set_id] = len(ip_addresses)
 
     return addresses, counts
-
-
-# Serve static files if in development mode (handled by nginx in production)
-if "FLASK_ENV" in environ and environ["FLASK_ENV"] == "development":
-
-    @app.route("/", methods=["GET"])
-    def get_html():
-        return send_from_directory(path_static, "index.html")
-
-    @app.route("/bundle.js", methods=["GET"])
-    def get_js():
-        return send_from_directory(path_static, "bundle.js")
-
-    @app.route("/favicons/<path:icon_path>", methods=["GET"])
-    def get_favicon(icon_path):
-        return send_from_directory(path_static + "/favicons/", icon_path)
-
-    @app.route("/sample-icons/<path:icon_path>", methods=["GET"])
-    def get_sample_icon(icon_path):
-        return send_from_directory(path_static + "/sample-icons/", icon_path)
 
 
 @app.route("/iconsets", methods=["GET"])
@@ -110,6 +90,6 @@ view_addresses, view_counts = load_views_file()
 
 if __name__ == "__main__":
     if "FLASK_ENV" in environ and environ["FLASK_ENV"] == "development":
-        app.run(host="0.0.0.0", port=3000)
+        app.run(host="0.0.0.0")
     else:
         app.run()
