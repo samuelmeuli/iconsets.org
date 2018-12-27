@@ -43,15 +43,10 @@ Do you know a great icon set that you'd like to add to the list?
 Clone the project and install all dependencies:
 
 1. `git clone`
-2. `pipenv install --dev` to install Python dependencies
-3. `pipenv run init` to install pre-commit hooks
-4. `yarn install` to install NPM dependencies
+2. `make install` to install all dependencies
+3. `make hooks` to install the pre-commit hooks
 
-Bundle the JavaScript files with Webpack and start the Flask server:
-
-`FLASK_ENV=development pipenv run start` and `yarn start`
-
-The app is now running on `localhost:3000`.
+Run `make start` to start the app. You can view it on `localhost:3000`.
 
 
 ## Credits

@@ -3,14 +3,11 @@
 set -e  # Exit on subsequent errors
 
 # Black (exit with 1 if files were reformatted)
-pipenv run format --check || (
-	pipenv run format &&
+make format BLACK_FLAGS="--check" || (
+	make format &&
 		echo "Python files have been reformatted. Please re-stage and commit your files." &&
 		exit 1
 )
 
-# Flake8
-pipenv run lint
-
-# Yarn
-yarn lint
+# Flake8 and ESLint
+make lint

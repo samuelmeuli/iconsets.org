@@ -16,11 +16,5 @@ black = "*"
 [requires]
 python_version = "3.6"
 
-[scripts]
-init = "git config core.hooksPath .hooks"
-start = "python server.py"
-format = "black server.py src --line-length=100"
-lint = "flake8 server.py src --max-line-length=100"
-
 [pipenv]
 allow_prereleases = true
