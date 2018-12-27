@@ -1,4 +1,5 @@
 import json
+import os
 from os import environ, path
 
 from anonymizeip import anonymize_ip
@@ -7,7 +8,8 @@ from flask import Flask, jsonify, redirect, request
 app = Flask(__name__)
 current_dir = path.dirname(path.realpath(__file__))
 path_list = current_dir + "/icon-sets.json"
-path_views = current_dir + "/views.json"
+path_cache = current_dir + "/cache"
+path_views = path_cache + "/views.json"
 path_static = current_dir + "/public"
 
 
@@ -21,6 +23,9 @@ def load_list_file():
 def load_views_file():
     """Load or create views file and load IP addresses into memory. Create cache for total number of
     unique views per icon set (view_counts)"""
+
+    if not path.exists(path_cache):
+        os.makedirs(path_cache)
 
     if not path.exists(path_views):
         with open(path_views, "w+") as view_file:

@@ -11,7 +11,7 @@ __pycache__/
 *$py.class
 
 # IP address cache
-views.json
+cache/
 
 # Node
 node_modules/
