@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  flask:
+    build: .
+    volumes:
+      - ./cache:/app/cache
+      - static:/app/dist
+    networks:
+      - nginx-network
+
+  nginx:
+    image: nginx:1.15
+    ports:
+      - 3000:80
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - static:/app/dist
+    depends_on:
+      - flask
+    networks:
+      - nginx-network
+
+networks:
+  nginx-network:
+    driver: bridge
+
+volumes:
+  cache:
+  static:
